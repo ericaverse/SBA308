@@ -82,7 +82,7 @@ Four Types of Data
 
 ## Results Format
 
-```
+ ```
 {
   // the ID of the learner for which this data has been collected
       "id": number,
@@ -99,3 +99,22 @@ Four Types of Data
   // the average or the keyed dictionary of scores
 }
 ```
+#### Function Format
+```
+function getLearnerData(CourseInfo,AssignmentGroup,[LearnerSubmission]){
+  ...
+  return ''array'';
+}
+```
+Utilize helper functions as appropriate or necessary. 
+
+#### Error Handling
+##### Risks
+- If an **AssignmentGroup** does not belong to its course / there is a mismatching **course_id** this program throws an error, letting the user know that the input was not valid. Data validation occurs elsewhere within the program. 
+- Account for potential errors in the data received by the program. 
+  - i.e. if **points_possible** is 0 (it is not possible to divide by 0)
+  - if the expected data type is not given (string => number or number => string
+>Suggested: use **try/catch** and other logic to handle errors gracefully. 
+- <sub>**Grading**</sub>
+  - If an assignment is not due, it is not included in the results or the average
+  - if the learner's submission is late (**submitted_at** is after **due_at** in terms of time) 10% of the total points possible for their score for the assignment is deducted.
