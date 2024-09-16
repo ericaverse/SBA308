@@ -34,7 +34,7 @@
   - [ ] Gathers data
   - [ ] Processes that data
   - [ ] Outputs a consistent result as described by the specifications.
-- The Expected Outcome is that the script will **analyze** and **transform** the data, converting it to an **array** of **objects** [⬇️]()
+- The Expected Outcome is that the script will **analyze** and **transform** the data, converting it to an **array** of **objects** [⬇️](#results-format)
 
 #### Provisions
 Four Types of Data
