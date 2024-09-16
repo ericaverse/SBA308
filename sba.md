@@ -3,9 +3,9 @@
 #### Rubric 
 > - [ ] Declare variable properly using **let** and **const** where appropriate.
 > - [ ] Use **operators** to perform calculations on variable and literals.
-> - [ ] Use strings, numbers, and Boolean values  cached within variables.
+> - [ ] Use **strings**, **numbers**, and **Boolean** values _**cached within variables.**_
 > - [ ] Use _**at least two**_ **if/else** statements to control program flow. Optionally, use at least one **switch** statement.
-> - [ ] Use **try/catch** statements to manage potential errors in the code, such as incorrectly formatted or ttyped data being fed into your program.
+> - [ ] Use **try/catch** statements to manage potential errors in the code, such as incorrectly formatted or typed data being fed into your program.
 > - [ ] Utilize _**at least two**_ different types of loops.
 > - [ ] Utilize _**at least one loop control keyword**_ such as **break** or **continue**.
 > - [ ] Create and/or manipulate **arrays** and **objects**.
