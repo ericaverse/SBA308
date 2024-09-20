@@ -98,24 +98,62 @@ function getLearnerData(course, ag, submissions) {
   return result;
 }
 
-const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+// const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
 
+// ---- written code begins here ------
+
+//Results---------------------------------------------------------------------
 getLearnerData();
 
+
+// to calculate total score 
+let assigment1Score = averageScore(LearnerSubmissions.submission.score);
+let assignment2Score = averageScore(LearnerSubmissions.submission.score);
+
+//functions-------------------------------------------------------------------- 
 function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmission) {
  
   let result = [
     {
       id: learner_id,
-      avg: average,
+      avg: totalScore(),
       1: ,
-      2 ,
+      2: ,
     }
   ];
   return result;
 }
 
-function averageScore (score, points_possible){
-  let average = score/points_possible;
+function totalScore(){
+  let total = (assigment1Score + assignment2Score)/
+  return total;
+}
+//Calculate the average Score with the validation of points allowed if submitted on or after the due date 
+function averageScore (score, points_possible, punctualWeight){
+  assignmentOnTime();
+  let average = (score/points_possible)*punctualWeight;
   return average;
 }
+//Calculates the value of the variable utilized to finalize the average score in relation to submission punctuality
+let punctualWeight =1;
+let dueDate = AssignmentGroup.assignments.due_at;
+let submitDate = LearnerSubmissions.submitted_at;
+
+function assignmentOnTime (submitDate, dueDate){
+  if (submitDate !== dueDate){
+    //calculate percent of grade deducted by time difference
+      /* time and date calculation*/
+      dateDue = new Date(dueDate);
+      dateSubmitted = new Date(submitDate);
+      //using JavaScript method getTime which converts the date into milliseconds, then convert milliseconds to days by dividing the difference in milliseconds by the total milliseconds in one day. 1 day = 24 hrs * 60 minutes * 60 seconds * 1000 milliseconds
+    let timeDifference = (dateSubmitted.getTime() - dateDue.getTime())/(1000*3600*24);
+    //Validate that punctualWeight does not return as 0, following the current math logic. So that averageScore() will calculate the final average score per assignment correctly. 
+      if (timeDifference !== 0){
+        punctualWeight =0.1*timeDifference;
+      } else if (timeDifference == 0){
+        punctualWeight = 1;
+      }
+    return punctualWeight;
+  }
+}
+
