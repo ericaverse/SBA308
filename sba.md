@@ -116,5 +116,5 @@ Utilize helper functions as appropriate or necessary.
   - if the expected data type is not given (string => number or number => string
 >Suggested: use **try/catch** and other logic to handle errors gracefully. 
 - <sub>**Grading**</sub>
-  - If an assignment is not due, it is not included in the results or the average
+  - If an assignment is not due, it is not included in the results or the average.
   - if the learner's submission is late (**submitted_at** is after **due_at** in terms of time) 10% of the total points possible for their score for the assignment is deducted.
